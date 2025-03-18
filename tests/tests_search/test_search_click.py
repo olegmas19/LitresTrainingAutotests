@@ -1,6 +1,16 @@
+import allure
+from allure_commons.types import Severity
 from Litres_Training_Autotests.search_litres import SearchLitres
 
-
+@allure.tag("web")
+@allure.severity(Severity.MINOR)
+@allure.label("owner", "KING_PLANES")
+@allure.feature("Проверка поиска")
+@allure.story("Пользователь может подтвердить результаты ввода кнопкой 'PressEnter на клавиатуре'")
+@allure.description("Простые тесты на проверку поиска")
+@allure.suite("UI-Тесты")
+@allure.link("https://www.litres.ru/", name="Testing")
+@allure.title("Проверка поиска через кнопку 'PressEnter'")
 def test_search_click_book_author():
     search_litres = SearchLitres()
 

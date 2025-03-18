@@ -1,7 +1,16 @@
-from selene import browser, have
+import allure
+from allure_commons.types import Severity
 from Litres_Training_Autotests.authorisation_litres import AuthorisationLitres
 
-
+@allure.tag("web")
+@allure.severity(Severity.MINOR)
+@allure.label("owner", "KING_PLANES")
+@allure.feature("Авторизация пользователя")
+@allure.story("Пользователь может авторизоваться с валидными данными")
+@allure.description("Простые тесты на проверку авторизации пользователя")
+@allure.suite("UI-Тесты")
+@allure.link("https://www.litres.ru/", name="Testing")
+@allure.title("Авторизация с валидными данными")
 def test_checking_authorisation_valid_data():
     authorisation_litres = AuthorisationLitres()
 

@@ -1,8 +1,16 @@
-from selene import browser, have, be
-
+import allure
+from allure_commons.types import Severity
 from Litres_Training_Autotests.search_litres import SearchLitres
 
-
+@allure.tag("web")
+@allure.severity(Severity.MINOR)
+@allure.label("owner", "KING_PLANES")
+@allure.feature("Проверка поиска")
+@allure.story("Пользователь может подтвердить результаты ввода кнопкой 'Поиск'")
+@allure.description("Простые тесты на проверку поиска")
+@allure.suite("UI-Тесты")
+@allure.link("https://www.litres.ru/", name="Testing")
+@allure.title("Проверка поиска через кнопку 'Поиск'")
 def test_search_press_enter_audio_author():
     search_litres = SearchLitres()
     # GIVEN
