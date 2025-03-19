@@ -1,9 +1,5 @@
-import os
-
-from dotenv import load_dotenv
 from selene import browser, have, be
 import allure
-
 
 class AuthorisationLitres:
 
@@ -33,7 +29,9 @@ class AuthorisationLitres:
 
     @allure.step("Открывается страница с профилем")
     def personal_account_entrance(self):
-        browser.element('[data-testid="user-button"]').click()
+        browser.open('https://www.litres.ru/me/profile/')
+    # browser.element('[data-testid="user-button"]').click()
+
 
     @allure.step("Проверяется успешность авторизации с валидными данными")
     def should_have_authorized(self, value1, value2):

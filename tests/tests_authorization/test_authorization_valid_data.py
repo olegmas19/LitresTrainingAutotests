@@ -1,6 +1,8 @@
 import os
 import allure
 from allure_commons.types import Severity
+from selene import browser
+
 from Litres_Training_Autotests.authorisation_litres import AuthorisationLitres
 
 
