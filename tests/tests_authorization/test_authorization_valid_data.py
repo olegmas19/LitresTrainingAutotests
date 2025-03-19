@@ -34,4 +34,4 @@ def test_checking_authorisation_valid_data():
     authorisation_litres.personal_account_entrance()
 
     # THEN
-    authorisation_litres.should_have_authorized("tracktor19@mail.ru", "Выход")
+    authorisation_litres.should_have_authorized(litres_login, "Выход")
