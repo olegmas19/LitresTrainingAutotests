@@ -14,16 +14,6 @@
 - [x] Добавление книги в Избранное
 - [x] Удаление книги из Избранного
 
-### API-тесты
-- [x] Авторизация пользователя на сайте(успешная и неуспешная)
-- [x] Поиск книги
-- [x] Добавление книги в корзину
-
-### Mobile-тесты
-- [x] Поиск книги(успешный и неуспешный)
-- [x] Добавление книги в Сохраненное
-- [x] Удаление книги из Сохраненного
-
 ----
 ### Проект реализован с использованием:
 <img src="design/icons/python-original.svg" width="50"> <img src="design/icons/pytest.png" width="50"> <img src="design/icons/intellij_pycharm.png" width="50"> <img src="design/icons/selene.png" width="50"> <img src="design/icons/selenoid.png" width="50"> <img src="design/icons/jenkins.png" width="50"> <img src="design/icons/allure_report.png" width="50"> <img src="design/icons/allure_testops.png" width="50"> <img src="design/icons/tg.png" width="50"> <img src="design/icons/jira.png" width="50">
