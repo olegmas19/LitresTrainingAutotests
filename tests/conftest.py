@@ -10,7 +10,7 @@ DEFAULT_BROWSER_VERSION = "128.0"
 
 
 def pytest_addoption(parser):
-    parser.addoption('--browser_version', default='128.0')
+    parser.addoption("--browser_version", default="128.0")
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -18,16 +18,16 @@ def load_env():
     load_dotenv()
 
 
-@pytest.fixture(scope='function', autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def setup_browser(request):
-    browser_version = request.config.getoption('--browser_version')
+    browser_version = request.config.getoption("--browser_version")
     browser_version = (
         browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
     )
-    browser.config.base_url = 'https://www.litres.ru/'
+    browser.config.base_url = "https://www.litres.ru/"
 
     driver_options = webdriver.ChromeOptions()
-    driver_options.page_load_strategy = 'eager'
+    driver_options.page_load_strategy = "eager"
     browser.config.driver_options = driver_options
     browser.config.window_width = 1700
     browser.config.window_height = 1080
