@@ -23,12 +23,15 @@ source .venv/bin/activate
 pip install -r requirements.txt
 pytest tests
 ```
-
+> Для получения отчета необходимо выполнить команду:
+```
+allure serve tests/allure-results
+```
 ----
 ### Удаленный запуск автотестов выполняется на сервере Jenkins
 > <a target="_blank" href="https://jenkins.autotests.cloud/job/LitresTrainingAutotests/">Ссылка на проект в Jenkins</a>
 
-#### Параметры сборки
+#### Параметры сборки(не обязательны)
 
 * `COMMENT` - комментарий
 * `BROWSER_VERSION` - версия браузера
