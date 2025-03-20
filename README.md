@@ -64,7 +64,6 @@ pytest tests
 ----
 ### Оповещение о результатах прогона тестов в Telegram
 ![This is an image](design/image/tg_notification.jpeg)
-
 ----
 ### Пример видео прохождения ui-автотеста
 ![autotest_gif](design/image/autotest.gif)
