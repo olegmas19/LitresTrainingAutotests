@@ -173,7 +173,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-# .gitignore
+
 litres_training_autotests/data/*.apk
 
 
