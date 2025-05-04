@@ -18,6 +18,7 @@ class Config(BaseModel):
     platformName: str = os.getenv("PLATFORM_NAME")
     platformVersion: str = os.getenv("PLATFORM_VERSION")
 
+
     def to_driver_options(self, context):
         options = UiAutomator2Options()
 
