@@ -176,6 +176,3 @@ cython_debug/
 # .gitignore
 litres_training_autotests/data/Litres-Books-3.88.0.apk
 
-
-litres_training_autotests/data/Litres-Books-*.apk
-litres_training_autotests/data/Litres-Books-3.88.0.apk
