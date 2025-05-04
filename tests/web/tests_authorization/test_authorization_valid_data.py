@@ -1,12 +1,8 @@
 import os
 import allure
 from allure_commons.types import Severity
-from selene import browser
-
-from Litres_Training_Autotests.authorisation_litres import AuthorisationLitres
-
-
-authorisation_litres = AuthorisationLitres()
+from litres_training_autotests.page.web.authorisation_litres import authorisation_litres
+from litres_training_autotests.helper.load_login_pass import load_env
 
 
 @allure.tag("web")
@@ -19,8 +15,9 @@ authorisation_litres = AuthorisationLitres()
 @allure.link("https://www.litres.ru/", name="Testing")
 @allure.title("Авторизация с валидными данными")
 def test_checking_authorisation_valid_data():
-    litres_login = os.getenv("LITRES_LOGIN")
-    litres_password = os.getenv("LITRES_PASSWORD")
+    # litres_login = os.getenv("LITRES_LOGIN")
+    # litres_password = os.getenv("LITRES_PASSWORD")
+    litres_login, litres_password = load_env()
 
     # GIVEN
     authorisation_litres.open()

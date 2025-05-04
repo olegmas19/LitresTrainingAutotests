@@ -2,7 +2,7 @@ import pytest
 from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from utils import attach
+from litres_training_autotests.utils import attach
 from dotenv import load_dotenv
 import os
 
@@ -24,7 +24,9 @@ def setup_browser(request):
     browser_version = (
         browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
     )
+
     browser.config.base_url = "https://www.litres.ru/"
+    # browser.config.driver_name = 'chrome'
 
     driver_options = webdriver.ChromeOptions()
     driver_options.page_load_strategy = "eager"
@@ -32,8 +34,8 @@ def setup_browser(request):
     browser.config.window_width = 1700
     browser.config.window_height = 1080
 
-    selenoid_login = os.getenv("SELENOID_LOGIN")
-    selenoid_pass = os.getenv("SELENOID_PASS")
+    # selenoid_login = os.getenv("SELENOID_LOGIN")
+    # selenoid_pass = os.getenv("SELENOID_PASS")
     selenoid_url = os.getenv("SELENOID_URL")
 
     options = Options()
@@ -45,7 +47,8 @@ def setup_browser(request):
 
     options.capabilities.update(selenoid_capabilities)
     browser.config.driver = webdriver.Remote(
-        command_executor=f"https://{selenoid_login}:{selenoid_pass}@{selenoid_url}/wd/hub",
+        command_executor=f"http://{selenoid_url}/wd/hub",
+        # command_executor=f"https://{selenoid_login}:{selenoid_pass}@{selenoid_url}/wd/hub",
         options=options,
     )
 

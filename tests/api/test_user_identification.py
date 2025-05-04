@@ -1,0 +1,32 @@
+import json
+import os
+import allure
+from allure_commons.types import Severity
+from dotenv import load_dotenv
+from litres_training_autotests.helper.api_requests import api_requests
+from jsonschema import validate
+from litres_training_autotests.helper.load_schemas import load_schema
+
+
+@allure.tag("API")
+@allure.severity(Severity.NORMAL)
+@allure.label("owner", "KING_PLANES")
+@allure.feature("Идентификация")
+@allure.story("Пользователь может ввести логин в поле 'Почта или логин' и нажать Продолжить")
+@allure.suite("API-Тесты")
+@allure.title("Идентификация пользователя через API")
+def test_user_identification():
+    load_dotenv()
+    login = os.getenv("LITRES_LOGIN")
+
+    # GIVEN
+    url = "/auth/login-available"
+    payload = json.dumps({"login": login})
+
+    # WHEN
+    response = api_requests.api_request(url, method="POST", data=payload)
+
+    # THEN
+    assert response.status_code == 200
+    assert response.json()["payload"]["data"]["available"] == False
+    validate(response.json(), schema=load_schema("/post_user_identification.json"))

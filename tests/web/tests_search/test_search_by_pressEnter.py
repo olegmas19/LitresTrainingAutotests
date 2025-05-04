@@ -1,6 +1,7 @@
 import allure
 from allure_commons.types import Severity
-from Litres_Training_Autotests.search_litres import SearchLitres
+from litres_training_autotests.page.web.search_litres import search_litres
+
 
 @allure.tag("web")
 @allure.severity(Severity.MINOR)
@@ -12,7 +13,7 @@ from Litres_Training_Autotests.search_litres import SearchLitres
 @allure.link("https://www.litres.ru/", name="Testing")
 @allure.title("Проверка поиска через кнопку 'Поиск'")
 def test_search_press_enter_audio_author():
-    search_litres = SearchLitres()
+
     # GIVEN
     search_litres.open()
 
@@ -21,5 +22,6 @@ def test_search_press_enter_audio_author():
     search_litres.press_enter_search()
 
     # THEN
-    search_litres.checking_search_results('Результаты поиска «Война и мир»', 'Война и мир')
-
+    search_litres.checking_search_results(
+        "Результаты поиска «Война и мир»", "Война и мир"
+    )
