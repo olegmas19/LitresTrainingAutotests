@@ -1,6 +1,6 @@
 pytest~=8.3.5
 selene>=2.0.0rc2
-allure-pytest==2.13.5
+allure-pytest==2.14.1
 requests~=2.32.3
 Appium-Python-Client~=4.0.0
 pydantic~=2.11.3
