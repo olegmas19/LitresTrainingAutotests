@@ -1,4 +1,4 @@
-from selene import browser, have, be, by
+from selene import browser, be, by
 import allure
 from selene.support.shared.jquery_style import s
 

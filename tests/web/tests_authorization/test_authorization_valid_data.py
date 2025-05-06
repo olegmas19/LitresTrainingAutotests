@@ -15,8 +15,6 @@ from litres_training_autotests.helper.load_login_pass import load_env
 @allure.link("https://www.litres.ru/", name="Testing")
 @allure.title("Авторизация с валидными данными")
 def test_checking_authorisation_valid_data():
-    # litres_login = os.getenv("LITRES_LOGIN")
-    # litres_password = os.getenv("LITRES_PASSWORD")
     litres_login, litres_password = load_env()
 
     # GIVEN
