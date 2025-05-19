@@ -1,6 +1,6 @@
 import allure
 from allure_commons.types import Severity
-from litres_training_autotests.page.web.cart_litres import cart_litres
+from litres_training_autotests.pages.web.cart_litres import cart_litres
 
 
 @allure.tag("web")

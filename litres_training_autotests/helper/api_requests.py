@@ -4,8 +4,8 @@ from allure_commons.types import AttachmentType
 import logging
 import allure
 from allure_commons._allure import step
-from tests.api.conftest import BASE_URL
 
+BASE_URL = "https://api.litres.ru/foundation/api"
 
 class ApiRequests:
 
@@ -65,3 +65,4 @@ class ApiRequests:
 
 
 api_requests = ApiRequests()
+

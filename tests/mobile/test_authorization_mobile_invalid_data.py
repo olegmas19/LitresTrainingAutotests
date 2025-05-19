@@ -2,8 +2,8 @@ import allure
 from allure_commons._allure import step
 from allure_commons.types import Severity
 from litres_training_autotests.helper.load_login_pass import load_env
-from litres_training_autotests.page.mobile.authorization_mobile import auth_mobile
-from litres_training_autotests.page.mobile.skip_onboarding import skip_mobile_onboarding
+from litres_training_autotests.pages.mobile.authorization_mobile import auth_mobile
+from litres_training_autotests.pages.mobile.skip_onboarding import skip_mobile_onboarding
 
 
 @allure.tag("mobile")
@@ -16,15 +16,14 @@ from litres_training_autotests.page.mobile.skip_onboarding import skip_mobile_on
 @allure.description("Простые тесты на проверку авторизации")
 @allure.suite("mobile-Тесты")
 @allure.title("Проверка авторизации с невалидными данными")
-def test_search():
+def test_authorization_mobile_invalid_data():
     litres_login, litres_password = load_env()
 
-    with step("Type search"):
-        # GIVEN
-        skip_mobile_onboarding.skip_onboarding()
+    # GIVEN
+    skip_mobile_onboarding.skip_onboarding()
 
-        # WHEN
-        auth_mobile.authorisation_mobile(litres_login, 'qwerty')
+    # WHEN
+    auth_mobile.authorization_mobile(litres_login, 'qwerty')
 
-        # THEN
-        auth_mobile.check_authorisation_invalid_result()
+    # THEN
+    auth_mobile.check_authorization_invalid_result()

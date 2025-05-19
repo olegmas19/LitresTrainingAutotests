@@ -5,7 +5,7 @@ import allure
 
 class SkipOnboarding:
 
-    @allure.step("Пропускаем онбординг")
+    @allure.step("Пропуск онбординга")
     def skip_onboarding(self):
         browser.element(
             (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("ENGLISH")')

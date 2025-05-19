@@ -6,7 +6,7 @@ import allure
 class AuthorizationMobile:
 
     @allure.step("Авторизация в мобильном приложении")
-    def authorisation_mobile(self, litres_login, litres_password):
+    def authorization_mobile(self, litres_login, litres_password):
         browser.element(
             (
                 AppiumBy.ANDROID_UIAUTOMATOR,
@@ -27,13 +27,13 @@ class AuthorizationMobile:
         ).click()
 
     @allure.step("Проверка результатов успешной авторизации")
-    def check_authorisation_valid_result(self, litres_login):
+    def check_authorization_valid_result(self, litres_login):
         browser.element((AppiumBy.ID, "ru.litres.android:id/user_login")).should(
             be.visible
         ).should(have.text(litres_login))
 
     @allure.step("Проверка результатов неуспешной авторизации")
-    def check_authorisation_invalid_result(self):
+    def check_authorization_invalid_result(self):
         browser.element((AppiumBy.ID, "ru.litres.android:id/error_text_message")).should(
             be.visible
         ).should(have.text("Invalid username or password. Please make sure you have entered your information correctly."))

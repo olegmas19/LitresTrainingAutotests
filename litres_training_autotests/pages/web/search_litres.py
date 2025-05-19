@@ -4,23 +4,23 @@ import allure
 
 class SearchLitres:
 
-    @allure.step("Открывается сайт 'Литрес'")
+    @allure.step("Открытие сайта 'Литрес'")
     def open(self):
         browser.open("/")
 
-    @allure.step("Вводится в поле поиска значение")
+    @allure.step("Ввод в поле поиска значение")
     def fill_search(self, value1):
         browser.element('[data-testid="search__input"]').type(value1)
 
-    @allure.step("Нажимается кнопка 'Поиск'")
+    @allure.step("Нажатие кнопки 'Поиск'")
     def click_button_search(self):
         browser.element('[data-testid="search__button"]').click()
 
-    @allure.step("Нажимается 'PressEnter' на клавиатуре")
+    @allure.step("Нажатие 'PressEnter' на клавиатуре")
     def press_enter_search(self):
         browser.element('[data-testid="search__input"]').press_enter()
 
-    @allure.step("Проверяются результаты поиска")
+    @allure.step("Проверка результатов поиска")
     def checking_search_results(self, value1, value2):
         browser.element('[id="pageTitle"]').should(have.text(value1))
         browser.element(

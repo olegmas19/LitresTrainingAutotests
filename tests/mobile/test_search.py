@@ -1,8 +1,8 @@
 import allure
 from allure_commons._allure import step
 from allure_commons.types import Severity
-from litres_training_autotests.page.mobile.search_book import search_litres
-from litres_training_autotests.page.mobile.skip_onboarding import skip_mobile_onboarding
+from litres_training_autotests.pages.mobile.search_book import search_litres
+from litres_training_autotests.pages.mobile.skip_onboarding import skip_mobile_onboarding
 
 
 @allure.tag("mobile")
@@ -14,7 +14,6 @@ from litres_training_autotests.page.mobile.skip_onboarding import skip_mobile_on
 @allure.suite("mobile-Тесты")
 @allure.title("Проверка поиска через строку поиска")
 def test_search():
-    with step("Type search"):
         name_book = "скотный двор"
         name_book_full = "джордж оруэлл скотный двор"
         name_book_result = "Скотный двор / Animal Farm"

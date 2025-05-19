@@ -7,10 +7,10 @@ from litres_training_autotests.helper.api_requests import api_requests
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "KING_PLANES")
 @allure.feature("Избранное")
-@allure.story("Пользователь может удалить товар в избранное")
+@allure.story("Пользователь может удалить товар из избранного")
 @allure.suite("API-Тесты")
-@allure.title("Проверка удаления товара в избранное через API")
-def test_add_book_to_cart():
+@allure.title("Проверка удаления товара из избранного через API")
+def test_remove_book_from_favorites():
 
     # GIVEN
     url = "/wishlist/arts/8685806"

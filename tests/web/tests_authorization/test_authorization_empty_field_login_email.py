@@ -1,6 +1,6 @@
 import allure
 from allure_commons.types import Severity
-from litres_training_autotests.page.web.authorisation_litres import authorisation_litres
+from litres_training_autotests.pages.web.authorization_litres import authorization_litres
 
 
 @allure.tag("web")
@@ -12,17 +12,17 @@ from litres_training_autotests.page.web.authorisation_litres import authorisatio
 @allure.suite("UI-Тесты")
 @allure.link("https://www.litres.ru/", name="Testing")
 @allure.title("Невозможность авторизации с пустым полем 'почта или логин'")
-def test_checking_authorisation_invalid_data():
+def test_authorization_empty_field_login_email():
 
     # GIVEN
-    authorisation_litres.open()
+    authorization_litres.open()
 
     # WHEN
-    authorisation_litres.press_tab_login()
-    authorisation_litres.fill_login("")
-    authorisation_litres.press_continue()
+    authorization_litres.press_tab_login()
+    authorization_litres.fill_login("")
+    authorization_litres.press_continue()
 
     # THEN
-    authorisation_litres.login_cannot_be_empty(
+    authorization_litres.login_cannot_be_empty(
         "Поле не может быть пустым", "Продолжить"
     )

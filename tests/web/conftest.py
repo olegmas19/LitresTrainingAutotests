@@ -9,6 +9,7 @@ import os
 DEFAULT_BROWSER_VERSION = "128.0"
 
 
+
 def pytest_addoption(parser):
     parser.addoption("--browser_version", default="128.0")
 

@@ -1,6 +1,6 @@
 import allure
 from allure_commons.types import Severity
-from litres_training_autotests.page.web.authorisation_litres import authorisation_litres
+from litres_training_autotests.pages.web.authorization_litres import authorization_litres
 
 
 @allure.tag("web")
@@ -12,19 +12,19 @@ from litres_training_autotests.page.web.authorisation_litres import authorisatio
 @allure.suite("UI-Тесты")
 @allure.link("https://www.litres.ru/", name="Testing")
 @allure.title("Невозможность авторизации с невалидными данными")
-def test_checking_authorisation_invalid_data():
+def test_checking_authorization_invalid_data():
 
     # GIVEN
-    authorisation_litres.open()
+    authorization_litres.open()
 
     # WHEN
-    authorisation_litres.press_tab_login()
-    authorisation_litres.fill_login("qweasdzxc")
-    authorisation_litres.press_continue()
-    authorisation_litres.fill_password("qweasdzxc")
-    authorisation_litres.press_enter()
+    authorization_litres.press_tab_login()
+    authorization_litres.fill_login("qweasdzxc")
+    authorization_litres.press_continue()
+    authorization_litres.fill_password("qweasdzxc")
+    authorization_litres.press_enter()
 
     # THEN
-    authorisation_litres.should_not_have_authorized(
+    authorization_litres.should_not_have_authorized(
         "Ввести пароль", "Неверное сочетание логина и пароля", "Войти"
     )

@@ -5,7 +5,7 @@ from selene.support.shared.jquery_style import s
 
 class CatalogLitres:
 
-    @allure.step("Открывается сайт 'Литрес'")
+    @allure.step("Открытие сайта 'Литрес'")
     def open(self):
         browser.open("/")
 
