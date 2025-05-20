@@ -8,6 +8,12 @@ import os
 from appium import webdriver
 from litres_training_autotests.utils.attach import add_screenshot, add_bstack_video, add_xml
 
+@pytest.fixture(scope="session", autouse=True)
+def  litres_user():
+    load_dotenv()
+    litres_login = os.getenv("LITRES_LOGIN")
+    litres_password = os.getenv("LITRES_PASSWORD")
+    return litres_login, litres_password
 
 def pytest_addoption(parser):
     parser.addoption(
