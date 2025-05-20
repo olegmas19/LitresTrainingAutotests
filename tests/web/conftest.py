@@ -8,7 +8,12 @@ import os
 
 DEFAULT_BROWSER_VERSION = "128.0"
 
-
+@pytest.fixture(scope="session", autouse=True)
+def  litres_user():
+    load_dotenv()
+    litres_login = os.getenv("LITRES_LOGIN")
+    litres_password = os.getenv("LITRES_PASSWORD")
+    return litres_login, litres_password
 
 def pytest_addoption(parser):
     parser.addoption("--browser_version", default="128.0")

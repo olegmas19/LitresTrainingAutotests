@@ -1,8 +1,6 @@
-import os
 import allure
 from allure_commons.types import Severity
 from litres_training_autotests.pages.web.authorization_litres import authorization_litres
-from litres_training_autotests.helper.load_login_pass import load_env
 
 
 @allure.tag("web")
@@ -14,19 +12,18 @@ from litres_training_autotests.helper.load_login_pass import load_env
 @allure.suite("UI-Тесты")
 @allure.link("https://www.litres.ru/", name="Testing")
 @allure.title("Авторизация с валидными данными")
-def test_checking_authorization_valid_data():
-    litres_login, litres_password = load_env()
+def test_checking_authorization_valid_data(litres_user):
 
     # GIVEN
     authorization_litres.open()
 
     # WHEN
     authorization_litres.press_tab_login()
-    authorization_litres.fill_login(litres_login)
+    authorization_litres.fill_login(litres_user[0])
     authorization_litres.press_continue()
-    authorization_litres.fill_password(litres_password)
+    authorization_litres.fill_password(litres_user[1])
     authorization_litres.press_enter()
     authorization_litres.personal_account_entrance()
 
     # THEN
-    authorization_litres.should_have_authorized(litres_login, "Выход")
+    authorization_litres.should_have_authorized(litres_user[0], "Выход")
