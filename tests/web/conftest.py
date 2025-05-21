@@ -3,21 +3,13 @@ from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from litres_training_autotests.utils import attach
-from dotenv import load_dotenv
 import os
 
 DEFAULT_BROWSER_VERSION = "128.0"
 
+
 def pytest_addoption(parser):
     parser.addoption("--browser_version", default="128.0")
-
-
-@pytest.fixture(scope="session", autouse=True)
-def load_env():
-    load_dotenv()
-    litres_login = os.getenv("LITRES_LOGIN")
-    litres_password = os.getenv("LITRES_PASSWORD")
-    return litres_login, litres_password
 
 
 @pytest.fixture(scope="function", autouse=True)

@@ -1,8 +1,6 @@
 import json
-import os
 import allure
 from allure_commons.types import Severity
-from dotenv import load_dotenv
 from litres_training_autotests.helper.api_requests import api_requests
 from jsonschema import validate
 from litres_training_autotests.helper.load_schemas import load_schema
@@ -15,13 +13,11 @@ from litres_training_autotests.helper.load_schemas import load_schema
 @allure.story("Пользователь может ввести логин в поле 'Почта или логин' и нажать Продолжить")
 @allure.suite("API-Тесты")
 @allure.title("Идентификация пользователя через API")
-def test_user_identification():
-    load_dotenv()
-    login = os.getenv("LITRES_LOGIN")
+def test_user_identification(litres_user):
 
     # GIVEN
     url = "/auth/login-available"
-    payload = json.dumps({"login": login})
+    payload = json.dumps({"login": litres_user[0]})
 
     # WHEN
     response = api_requests.api_request(url, method="POST", data=payload)

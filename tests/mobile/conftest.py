@@ -6,14 +6,12 @@ from dotenv import load_dotenv
 from selene import browser, support
 import os
 from appium import webdriver
-from litres_training_autotests.utils.attach import add_screenshot, add_bstack_video, add_xml
+from litres_training_autotests.utils.attach import (
+    add_screenshot,
+    add_bstack_video,
+    add_xml,
+)
 
-@pytest.fixture(scope="session", autouse=True)
-def  litres_user():
-    load_dotenv()
-    litres_login = os.getenv("LITRES_LOGIN")
-    litres_password = os.getenv("LITRES_PASSWORD")
-    return litres_login, litres_password
 
 def pytest_addoption(parser):
     parser.addoption(
@@ -29,6 +27,7 @@ def pytest_configure(config):
     load_dotenv(
         dotenv_path=Path(__file__).resolve().parent.parent.parent / f".env.{context}"
     )
+
 
 @pytest.fixture
 def context(request):
@@ -65,5 +64,3 @@ def android_mobile_management(context):
 
     if context == "bstack":
         add_bstack_video(session_id)
-
-
