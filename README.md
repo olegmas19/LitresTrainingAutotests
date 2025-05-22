@@ -33,6 +33,32 @@
 
 ----
 ### Локальный запуск
+
+> Для локального запуска необходимо в корне проекта создать .env файлы с переменными:
+```
+.env:
+SELENOID_LOGIN=
+SELENOID_PASS=
+SELENOID_URL=
+LITRES_LOGIN=
+LITRES_PASSWORD=
+```
+```
+.env.bstack:
+REMOTE_URL=http://hub.browserstack.com/wd/hub
+DEVICE_NAME=Samsung Galaxy S22 Ultra
+PLATFORM_NAME=Android
+PLATFORM_VERSION=12.0
+APP_WAIT_ACTIVITY=ru.litres.android.splash.MainSplashAlias
+APP_ACTIVITY=ru.litres.android.splash.MainSplashAlias
+APP=bs://1d5b4a103f708994c69ca8a644d14c1730bd3c2a
+```
+```
+.env.credentials:
+USER_NAME=
+ACCESS_KEY=
+```
+
 > Для локального запуска с дефолтными значениями необходимо выполнить команду:
 ```
 python -m venv .venv
