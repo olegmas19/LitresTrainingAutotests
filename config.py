@@ -3,7 +3,7 @@ from pathlib import Path
 from appium.options.android import UiAutomator2Options
 from dotenv import load_dotenv
 from pydantic import BaseModel
-from litres_training_autotests.helper.resourse import DATA_DIR
+from litres_training_autotests.utils.resourse import DATA_DIR
 
 
 class Config(BaseModel):

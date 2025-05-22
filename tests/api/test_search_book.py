@@ -1,8 +1,8 @@
 import allure
 from allure_commons.types import Severity
-from litres_training_autotests.helper.api_requests import api_requests
+from litres_training_autotests.api.api_requests import api_requests
 from jsonschema import validate
-from litres_training_autotests.helper.load_schemas import load_schema
+from litres_training_autotests.utils.load_schemas import load_schema
 
 
 @allure.tag("API")
